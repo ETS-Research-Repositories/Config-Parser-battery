@@ -5,7 +5,7 @@ from typing import Dict, Any
 
 # merge hierarchically two dictionaries
 # todo: improve this function
-def dict_merge(dct: Dict[str, Any], merge_dct: Dict[str, Any], re=True):
+def dict_merge(dct: Dict[str, Any], merge_dct: Dict[str, Any]=None, re=True):
     """
     Recursive dict merge. Inspired by :meth:``dict.update()``, instead of
     updating only top-level keys, dict_merge recurses down into dicts nested
@@ -14,7 +14,7 @@ def dict_merge(dct: Dict[str, Any], merge_dct: Dict[str, Any], re=True):
     :param merge_dct: dct merged into dct
     :return: None
     """
-    # dct = dcopy(dct)
+    dct = dcopy(dct)
     if merge_dct is None:
         if re:
             return dct
